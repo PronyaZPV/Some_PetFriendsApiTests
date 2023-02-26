@@ -1,4 +1,4 @@
-email = 'pronyazpv@ya.ru'
+email = 'pronya@ya.ru'
 password = '07111986'
 
 pet = {

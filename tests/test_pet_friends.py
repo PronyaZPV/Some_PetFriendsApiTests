@@ -152,19 +152,19 @@ def test_delete_pet_with_invalid_key():
     assert 'name' not in result, '*** Unexpected response ***'
 
 
-# def test_delete_all_test_pets(filters={}):
-#     """ Подчистить базу от созданных тестовых питомцев с указанным именем
-#         """
-#
-#     _, auth_key = pf.get_api_key(email, password)
-#     _, result = pf.get_list_of_pets(auth_key, filters)
-#     n = 0
-#     name_test_pet = 'Tasya'   # необходимо указать имя удаляемого питомца
-#     for i in result['pets']:
-#         if i['name'] == name_test_pet:
-#             n += 1
-#             pf.delete_pet(auth_key, i['id'])
-#     print(f'\nКоличество удалённых кошек по имени {name_test_pet}:', n)
+def test_delete_all_test_pets(filters={}):
+    """ Подчистить базу от созданных тестовых питомцев с указанным именем
+        """
+
+    _, auth_key = pf.get_api_key(email, password)
+    _, result = pf.get_list_of_pets(auth_key, filters)
+    n = 0
+    name_test_pet = 'Tasya'   # необходимо указать имя удаляемого питомца
+    for i in result['pets']:
+        if i['name'] == name_test_pet:
+            n += 1
+            pf.delete_pet(auth_key, i['id'])
+    print(f'\nКоличество удалённых кошек по имени {name_test_pet}:', n)
 
 
 
