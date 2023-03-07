@@ -1,3 +1,4 @@
+base_url = 'https://petfriends.skillfactory.ru/'
 email = 'pronya@ya.ru'
 password = '07111986'
 
