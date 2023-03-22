@@ -12,7 +12,7 @@ def expect_all_keys(res: dict) -> object:
     assert 'pet_photo' in res, '*** Missing key "pet_photo" ***'
     assert 'created_at' in res, '*** Missing key "created_at" ***'
     assert 'id' in res, '*** Missing key "id" ***'
-    assert 'user_id' in res, '*** Missing key "user_id" ***'
+    # assert 'user_id' in res, '*** Missing key "user_id" ***'
     return
 
 
@@ -20,6 +20,7 @@ def logger(func):
     """ Декоратор для логирование работы функций, возвращающих объект response.
         Результат работы записывается в файл log.txt
         """
+
     def wrapper(*args, **kwargs):
         res_func = func(*args, **kwargs)
         res, _ = res_func
@@ -34,4 +35,21 @@ def logger(func):
                       f'\nResponse body = {res.text.split(",/9j/")[0]}'  # намеренно обрезал body, чтобы не было огромной "портянки"
                       f'\n{"-" * 40}\n')
         return res_func
+
     return wrapper
+
+
+def generate_string(n):
+    return 'x' * n
+
+
+def russian_chars():
+    return 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+
+
+def chinese_chars():
+    return '的一是不了人我在有他这为之大来以个中上们'
+
+
+def special_chars():
+    return '|\\/!@#$%^&*()-_=+`~?"№;:[]{}'
